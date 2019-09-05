@@ -3,7 +3,7 @@ require "bundler/setup"
 require "bindata"
 require "set"
 
-module WebLiero
+module Liero
   DEFAULT_MATERIALS = [
     0,  9,  10, 0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  1,  1,  
     1,  1,  1,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  32, 32,  
@@ -355,7 +355,7 @@ module WebLiero
     default_parameters initial_length: 256, type: Material
 
     def self.load_default
-      read(WebLiero::DEFAULT_MATERIALS.pack("C*"))
+      read(Liero::DEFAULT_MATERIALS.pack("C*"))
     end
   end
 
@@ -363,7 +363,7 @@ module WebLiero
     default_parameters initial_length: 256, type: Color
 
     def self.load_default
-      read(WebLiero::DEFAULT_PALETTE.pack("C*"))
+      read(Liero::DEFAULT_PALETTE.pack("C*"))
     end
 
     def make_unique!

@@ -2,9 +2,9 @@
 
 ROOT = File.expand_path(File.join(__dir__, ".."))
 
-require_relative File.join(ROOT, "lib/webliero-palette")
+require_relative File.join(ROOT, "lib/liero-palette")
 
-pm = WebLiero::PaletteWithMaterials.load_defaults
+pm = Liero::PaletteWithMaterials.load_defaults
 
 pm.palette.make_unique!
 
@@ -12,7 +12,7 @@ File.open(File.join(ROOT, "palettes/full_unique.lpl"), "wb") do |io|
   pm.palette.write(io)
 end
 
-WebLiero::Material::TYPES.each do |type|
+Liero::Material::TYPES.each do |type|
   palette = pm.filter_palette_by_material(type)
 
   File.open(File.join(ROOT, "palettes/#{type}.lpl"), "wb") do |io|
