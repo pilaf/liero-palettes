@@ -32,7 +32,7 @@ Windows -> Dockable Dialogs -> Palettes
 
 Then right-click on the palettes tab and select `Refresh Palettes`.
 
-![Refresh Palettes in GIMP](/screenshots/refresh-palette.png)
+![Refresh Palettes in GIMP](/screenshots/refresh-palettes.png)
 
 ### Alternate method (manually importing palettes one by one)
 
