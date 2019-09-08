@@ -8,14 +8,20 @@ pm = Liero::PaletteWithMaterials.load_defaults
 
 pm.palette.make_unique!
 
-File.open(File.join(ROOT, "palettes/full_unique.lpl"), "wb") do |io|
+File.open(File.join(ROOT, "palettes/liero/full_unique.lpl"), "wb") do |io|
   pm.palette.write(io)
 end
 
-Liero::Material::TYPES.each do |type|
-  palette = pm.filter_palette_by_material(type)
+Liero::GimpPaletteWriter.new(pm.palette, "Liero full unique").dump("palettes/gimp/full_unique.gpl")
 
-  File.open(File.join(ROOT, "palettes/#{type}.lpl"), "wb") do |io|
-    palette.write(io)
+Liero::Material::TYPES.each do |type|
+  filtered_palette = pm.filter_palette_by_material(type)
+
+  File.open(File.join(ROOT, "palettes/liero/#{type}.lpl"), "wb") do |io|
+    filtered_palette.write(io)
   end
+
+  reduced_palette = pm.reduce_palette_by_material(type)
+
+  Liero::GimpPaletteWriter.new(reduced_palette, "Liero #{type}").dump("palettes/gimp/#{type}.gpl")
 end

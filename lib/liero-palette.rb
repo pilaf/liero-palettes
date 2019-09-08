@@ -5,21 +5,36 @@ require "set"
 
 module Liero
   DEFAULT_MATERIALS = [
-    0,  9,  10, 0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  1,  1,  
-    1,  1,  1,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  32, 32,  
-    32, 32, 32, 32, 32, 32, 32, 0,  0,  0,  0,  0,  0,  0,  0,  0,  
-    0,  0,  0,  0,  0,  0,  0,  1,  1,  1,  1,  4,  4,  4,  0,  0,  
-    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  9,  9,  9,  
-    0,  0,  1,  1,  1,  4,  4,  4,  1,  1,  1,  4,  4,  4,  2,  2,  
-    2,  2,  1,  1,  1,  1,  1,  1,  0,  0,  0,  0,  0,  0,  0,  0,  
-    0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  1,  4,  4,  4,  0,  0,  
-    0,  0,  8,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  
-    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  
-    24, 24, 24, 24, 8,  8,  8,  8,  0,  0,  0,  0,  0,  0,  0,  0,  
-    1,  1,  1,  1,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  
-    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  
-    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  
-    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  
+    0,  9,  10, 0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  1,  1,
+
+    1,  1,  1,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  32, 32,
+
+    32, 32, 32, 32, 32, 32, 32, 0,  0,  0,  0,  0,  0,  0,  0,  0,
+
+    0,  0,  0,  0,  0,  0,  0,  1,  1,  1,  1,  4,  4,  4,  0,  0,
+
+    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  9,  9,  9,
+
+    0,  0,  1,  1,  1,  4,  4,  4,  1,  1,  1,  4,  4,  4,  2,  2,
+
+    2,  2,  1,  1,  1,  1,  1,  1,  0,  0,  0,  0,  0,  0,  0,  0,
+
+    0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  1,  4,  4,  4,  0,  0,
+
+    0,  0,  8,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+
+    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+
+    24, 24, 24, 24, 8,  8,  8,  8,  0,  0,  0,  0,  0,  0,  0,  0,
+
+    1,  1,  1,  1,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+
+    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+
+    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+
+    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+
     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0
   ].freeze
 
@@ -330,11 +345,11 @@ module Liero
     end
 
     def background?
-      (1 << 3) & m > 0
+      (1 << 3) == m
     end
 
     def see_shadow?
-      (1 << 4) & m > 0
+      (1 << 4) | (1 << 3) == m
     end
 
     def worm?
@@ -401,6 +416,29 @@ module Liero
     end
   end
 
+  class GimpPaletteWriter
+    HEADER = "GIMP Palette".freeze
+
+    def initialize(palette, name)
+      @palette = palette
+      @name = name
+    end
+
+    def dump(path)
+      File.open(path, "w") { |f| write(f) }
+    end
+
+    def write(io)
+      io.puts HEADER
+      io.puts @name
+      io.print "#"
+      @palette.each do |color|
+        io.puts
+        io.printf("%3d %3d %3d", color.r, color.g, color.b)
+      end
+    end
+  end
+
   class PaletteWithMaterials < Struct.new(:palette, :materials)
     DEFAULT_FILTER_OUT_COLOR = Color.new(r: 255, g: 0, b: 255).freeze
 
@@ -414,6 +452,10 @@ module Liero
         filtered[i] = filter_out_color unless materials[i].filter(type)
       end
       filtered
+    end
+
+    def reduce_palette_by_material(type)
+      Palette.new(palette.select.with_index { |c, i| materials[i].filter(type) })
     end
   end
 end
