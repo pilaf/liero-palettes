@@ -364,6 +364,15 @@ module Liero
       raise unless TYPES.include?(type.to_sym)
       send("#{type}?")
     end
+
+    def name
+      return "background" if background?
+      return "dirt" if dirt?
+      return "rock" if rock?
+      return "worm" if worm?
+      return "see shadow" if see_shadow?
+      return "undefined"
+    end
   end
 
   class Materials < BinData::Array
@@ -419,9 +428,10 @@ module Liero
   class GimpPaletteWriter
     HEADER = "GIMP Palette".freeze
 
-    def initialize(palette, name)
+    def initialize(palette, name, materials = nil)
       @palette = palette
       @name = name
+      @materials = materials
     end
 
     def dump(path)
@@ -430,11 +440,16 @@ module Liero
 
     def write(io)
       io.puts HEADER
-      io.puts @name
+      io.puts "Name: #@name"
+      io.puts "Columns: 16"
       io.print "#"
-      @palette.each do |color|
+      @palette.each_with_index do |color, i|
         io.puts
         io.printf("%3d %3d %3d", color.r, color.g, color.b)
+
+        if @materials
+          io.print "     #{@materials[i].name}"
+        end
       end
     end
   end

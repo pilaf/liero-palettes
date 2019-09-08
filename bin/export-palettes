@@ -12,7 +12,7 @@ File.open(File.join(ROOT, "palettes/liero/full_unique.lpl"), "wb") do |io|
   pm.palette.write(io)
 end
 
-Liero::GimpPaletteWriter.new(pm.palette, "Liero full unique").dump("palettes/gimp/full_unique.gpl")
+Liero::GimpPaletteWriter.new(pm.palette, "Liero full unique", pm.materials).dump("palettes/gimp/Liero full unique.gpl")
 
 Liero::Material::TYPES.each do |type|
   filtered_palette = pm.filter_palette_by_material(type)
@@ -23,5 +23,5 @@ Liero::Material::TYPES.each do |type|
 
   reduced_palette = pm.reduce_palette_by_material(type)
 
-  Liero::GimpPaletteWriter.new(reduced_palette, "Liero #{type}").dump("palettes/gimp/#{type}.gpl")
+  Liero::GimpPaletteWriter.new(reduced_palette, "Liero #{type}").dump("palettes/gimp/Liero #{type}.gpl")
 end
