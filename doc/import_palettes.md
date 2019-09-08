@@ -1,6 +1,6 @@
-[Back to Home](/README.md)
+[← Back to Home](/README.md)
 
-Next ([Applying a palette to an image color map](/doc/set_color_map.md))
+Next: [Applying a palette to an image color map](/doc/set_color_map.md)
 
 ## Importing palettes into GIMP
 
