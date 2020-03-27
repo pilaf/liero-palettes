@@ -9,5 +9,5 @@ using GIMP.
 
 ## Documentation
 
-1. [Importing palettes into GIMP](/doc/set_color_map.md)
+1. [Importing palettes into GIMP](/doc/import_palettes.md)
 2. [Applying a palette to an image color map](/doc/set_color_map.md)
