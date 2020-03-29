@@ -11,3 +11,4 @@ using GIMP.
 
 1. [Importing palettes into GIMP](/doc/import_palettes.md)
 2. [Applying a palette to an image color map](/doc/set_color_map.md)
+3. [Opening .lev files in GIMP](/doc/open_lev_files.md)
