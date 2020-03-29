@@ -19,7 +19,7 @@ your GIMP profile folder:
 be elsewhere
 
 Then run GIMP, or if you already had a running instance open the Palettes
-dialog with `Windows -> Dockable Dialogs -> Palettes`
+dialog with `Windows` → `Dockable Dialogs` → `Palettes`
 
 ![Open Palettes dockable dialog](/screenshots/palettes-dockable.png)
 
@@ -29,7 +29,7 @@ Then right-click on the palettes tab and select `Refresh Palettes`
 
 ### Alternate method (manually importing palettes one by one)
 
-Open the Palettes dialog with `Windows -> Dockable Dialogs -> Palettes`
+Open the Palettes dialog with `Windows` → `Dockable Dialogs` → `Palettes`
 
 ![Open Palettes dockable dialog](/screenshots/palettes-dockable.png)
 
