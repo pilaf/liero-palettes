@@ -1,7 +1,8 @@
 * [Home](/README.md)
 * [Importing palettes into GIMP](/doc/import_palettes.md)
 * [Applying a palette to an image color map](/doc/set_color_map.md)
-* Opening Liero levels (.lev files) in GIMP
+* Opening Liero levels in GIMP
+* [Exporting to Liero level format in GIMP](/doc/save_lev_file.md)
 
 ## Opening Liero levels (.lev files) in GIMP
 
