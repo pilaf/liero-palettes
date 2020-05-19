@@ -10,13 +10,14 @@ release](https://github.com/pilaf/liero-palettes/releases).
 Look for the folder `palettes/gimp` and copy all .gpl (GIMP palette) files into
 your GIMP profile folder:
 
-* In Windows/GIMP 2.10:
-  `C:\Users\{your-username}\AppData\Roaming\GIMP\2.10\palettes`
-* In Linux/GIMP 2.10: `/home/{your-username}/.config/GIMP/2.10/palettes`
-* In macOS/GIMP 2.10: `/Users/{your-username}/Library/GIMP/2.10/palettes` or `/Users/{your-username}/Library/Application Support/GIMP/2.10/palettes`
+OS | GIMP version | Palettes folder location
+---|--------------|-------------------------
+Windows | 2.10 | `C:\Users\{your-username}\AppData\Roaming\GIMP\2.10\palettes`
+Linux   | 2.10 | `/home/{your-username}/.config/GIMP/2.10/palettes`
+macOS   | 2.10 | `/Users/{your-username}/Library/GIMP/2.10/palettes`<br>-or-<br> `/Users/{your-username}/Library/Application Support/GIMP/2.10/palettes`
 
-⚠️ NOTE: if you're on a different version of GIMP your profile folder will likely
-be elsewhere
+⚠️ NOTE: if you're on a version of GIMP not listed above your profile folder
+will likely be elsewhere, look for a folder named after your GIMP version.
 
 Then run GIMP, or if you already had a running instance open the Palettes
 dialog with `Windows` → `Dockable Dialogs` → `Palettes`
