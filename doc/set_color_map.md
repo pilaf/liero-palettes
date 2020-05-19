@@ -1,6 +1,6 @@
 [Back to Home](/README.md)
 
-Previous: [Importing palettes into GIMP](/doc/import_palettes.md.md) | Next: [Oening .lev files in GIMP](/doc/open_lev_file.md)
+Previous: [Importing palettes into GIMP](/doc/import_palettes.md.md) | Next: [Opening .lev files in GIMP](/doc/open_lev_file.md)
 
 ## Applying a palette to an image color map
 
