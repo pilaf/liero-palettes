@@ -3,6 +3,7 @@
 * [Applying a palette to an image color map](/doc/set_color_map.md)
 * [Opening Liero levels in GIMP](/doc/open_lev_file.md)
 * Exporting to Liero level format in GIMP
+* [Tips on editing Liero levels in GIMP](/doc/editing_tips.md)
 
 ## Exporting to Liero level format (.lev file) in GIMP
 
