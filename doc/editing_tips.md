@@ -43,3 +43,18 @@ with the Pencil Tool (all three using the same brush and stroke size settings).
 While the two top ones look great in GIMP, that fuzziness will be lost when
 exporting to .lev, with unexpected results. The bottom one however will look
 exactly the same in the .lev.
+
+### Enable Hard Edge when using the Eraser Tool
+
+The Eraser Tool behaves like the Paintbrush by default, but it can be turned
+to work like the Pencil by enabling the *Hard Edge* option in the tool options
+pane, so make sure you do.
+
+### Use Ctrl-click to quickly pick colors from the image
+
+While drawing on the image it's often far quicker to pick a color from the
+image itself than from the palette, or sometimes you just want to grab an
+exact color. The Color Picker Tool allows you to do just that, but you don't
+need to select it from the toolbox each time, instead you can just hold Ctrl
+(or Cmd in macOS) while using the Pencil Tool, and it will turn into the
+Color Picker until you release the key.
