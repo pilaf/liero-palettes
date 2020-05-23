@@ -7,8 +7,9 @@ The rest of this README explains how to use those palettes to edit Liero maps
 using [GIMP](https://www.gimp.org/) (free/open source graphics editor for
 Windows/Linux/macOS).
 
-## Documentation
+## Tutorial index
 
+* [Introduction to Liero maps and GIMP](/doc/introduction.md)
 * [Importing palettes into GIMP](/doc/import_palettes.md)
 * [Applying a palette to an image color map](/doc/set_color_map.md)
 * [Opening Liero levels in GIMP](/doc/open_lev_file.md)

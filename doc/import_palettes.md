@@ -1,4 +1,5 @@
 * [Home](/README.md)
+* [Introduction to Liero maps and GIMP](/doc/introduction.md)
 * Importing palettes into GIMP
 * [Applying a palette to an image color map](/doc/set_color_map.md)
 * [Opening Liero levels in GIMP](/doc/open_lev_file.md)
