@@ -50,6 +50,13 @@ The Eraser Tool behaves like the Paintbrush by default, but it can be turned
 to work like the Pencil by enabling the *Hard Edge* option in the tool options
 pane, so make sure you do.
 
+### Disable Antialiasing when using selection tools
+
+In the same vein as the two above tips, whenever you select part of your image
+using the Rectangle Select Tool, Ellipse Select Tool, Free Select Tool, etc.,
+make sure you disable the *Antialiasing* and *Feather Edges* options so that
+you don't end with half-opacity pixels.
+
 ### Use Ctrl-click to quickly pick colors from the image
 
 While drawing on the image it's often far quicker to pick a color from the
