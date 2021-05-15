@@ -9,7 +9,7 @@
 ## Exporting to Liero level format (.lev file) in GIMP
 
 Before going forward with exporting to .lev, be minded that if you're making
-a map for use in WebLiero you can simply export to indexed PNG and call it a
+a map for use in WebLiero you can simply export as indexed PNG and call it a
 day.
 WebLiero doesn't even put a map size requirement when it's in PNG format, so
 you can make a map of virtually any size.
