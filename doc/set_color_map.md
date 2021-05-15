@@ -13,8 +13,12 @@ First make sure your image is in indexed mode. If it's not, go to
 
 ![Indexed mode](/screenshots/mode-indexed-menu.png)
 
-And once in the Indexed Color Conversion dialog select "Use custom palette" and
-pick the palette you want, it will be applied as your color map.
+Once in the Indexed Color Conversion dialog select "Use custom palette" and
+pick the palette you want (usually "Liero full unique" if you downloaded the
+palettes from this guide), it will be applied as your color map.
+
+⚠️ Warning: make sure the "Remove unused and duplicate colors from colormap"
+checkbox is unchecked during this step.
 
 ![Indexed color conversion](/screenshots/indexed-color-conversion.png)
 
@@ -23,6 +27,6 @@ going to `Colors` → `Map` → `Set Colormap...`
 
 ![Set colormap](/screenshots/set-colormap-menu.png)
 
-And then pick the palette you want.
+And then pick the palette you want (usually "Liero full unique").
 
 ![Set colormap](/screenshots/set-colormap-dialog.png)
