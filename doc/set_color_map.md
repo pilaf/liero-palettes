@@ -14,7 +14,7 @@ palette index, is the 256-color palette that's embedded in the image and limits
 the colors that image can show. An image that has a color map is said to be
 "indexed".
 
-### Starting from an RGB mode image
+### Starting from an RGB-mode image
 
 If you're image not yet indexed (i.e. in RGB mode), then go to `Image` → `Mode`
 → `Indexed` to convert it.
