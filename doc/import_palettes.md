@@ -41,7 +41,7 @@ Open the Palettes dialog with `Windows` → `Dockable Dialogs` → `Palettes`
 Once in the palettes dialog, right click on the palettes list and select
 `Import Palette...`
 
-Select the `Palette file` option in the import dialog and look for a .lpl file
+Select the `Palette file` option in the import dialog and look for a .gpl file
 to import.
 
 ![Import Palette](/screenshots/import-palette.png)
